@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Menu = () => {
   return (
-    <div className="flex justify-center my-5">
+    <div className="flex justify-center mt-5 mb-10">
       <ul className="menu menu-horizontal">
         <li className="mr-3">
           <Link>Photos</Link>
