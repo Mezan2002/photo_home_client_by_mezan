@@ -75,7 +75,7 @@ const Header = () => {
         <Link className="btn z-10 mr-5" to="/login">
           Log In
         </Link>
-        <Link className="btn z-10" to="/login">
+        <Link className="btn z-10" to="/register">
           Sign Up
         </Link>
       </div>
