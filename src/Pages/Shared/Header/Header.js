@@ -72,12 +72,12 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <a className="btn z-10 mr-5" href="/">
+        <Link className="btn z-10 mr-5" to="/login">
           Log In
-        </a>
-        <a className="btn z-10" href="/">
+        </Link>
+        <Link className="btn z-10" to="/login">
           Sign Up
-        </a>
+        </Link>
       </div>
     </div>
   );

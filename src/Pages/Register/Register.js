@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import GoogleIcon from "../../assets/icons/icons8-google-48.png";
 import FacebookIcon from "../../assets/icons/icons8-facebook-48.png";
 
-const Login = () => {
+const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -78,4 +78,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
