@@ -3,6 +3,33 @@ import React from "react";
 const AddNew = () => {
   const handleAddNew = (event) => {
     event.preventDefault();
+    const form = event.target;
+    const title = form.title.value;
+    const URL = form.URL.value;
+    const authorName = form.authorName.value;
+    const authorImageURL = form.authorImageURL.value;
+    const numberOfDownloads = form.numberOfDownloads.value;
+
+    const newAdding = {
+      title: title,
+      imageURL: URL,
+      authorName,
+      authorImageURL,
+      download: numberOfDownloads,
+    };
+    console.log(newAdding);
+
+    fetch("http://localhost:5000/photos", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newAdding),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
   return (
     <div>
@@ -56,9 +83,7 @@ const AddNew = () => {
                 required
               />
             </div>
-            <button className="btn btn-primary w-full mt-10 ">
-              Add New Item
-            </button>
+            <input type="submit" value="Add New Item" className="btn" />
           </form>
         </div>
       </div>
