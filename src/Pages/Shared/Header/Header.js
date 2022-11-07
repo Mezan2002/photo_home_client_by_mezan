@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
   const navItems = (
     <>
       <li className="mr-5">Explore</li>
@@ -72,12 +74,20 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <Link className="btn z-10 mr-5" to="/login">
-          Log In
-        </Link>
-        <Link className="btn z-10" to="/register">
-          Sign Up
-        </Link>
+        <div className="flex items-center">
+          {user?.uid ? (
+            <button className="btn">Log Out</button>
+          ) : (
+            <>
+              <Link className="btn z-10 mr-5" to="/login">
+                Log In
+              </Link>
+              <Link className="btn z-10" to="/register">
+                Sign Up
+              </Link>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
