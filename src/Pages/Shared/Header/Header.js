@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
+import "./Header.css";
 
 const Header = () => {
   const { user } = useContext(AuthContext);
@@ -40,7 +41,11 @@ const Header = () => {
             {navItems}
           </ul>
         </div>
-        <Link to="/" className="text-white normal-case text-xl z-10" href="/">
+        <Link
+          to="/"
+          className="text-white text-3xl normal-case z-10 logoText"
+          href="/"
+        >
           photoHome
         </Link>
       </div>
